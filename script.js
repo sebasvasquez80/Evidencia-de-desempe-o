@@ -50,7 +50,7 @@ function mostrarResultado(nombreEstudiante, promedio, estado) {
     console.log("Estado: " + estado);
 }
 
-function ejecuciónPrograma() {
+function ejecucionPrograma() {
     if (iniciarSesion()) {
         while (true) {
             var nombreEstudiante = prompt("Ingrese el nombre del estudiante (o 'salir' para terminar):");
@@ -66,4 +66,4 @@ function ejecuciónPrograma() {
     }
 }
 
-ejecuciónPrograma();
+ejecucionPrograma();
