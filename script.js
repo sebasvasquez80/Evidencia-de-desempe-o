@@ -20,8 +20,16 @@ function iniciarSesion() {
 function capturarNotasEstudiante() {
     var notas = [];
     for (var i = 0; i < 5; i++) {
-        var nota = parseFloat(prompt("Ingrese la nota " + (i + 1) + ":"));
+        var nota = Number(prompt("Ingrese la nota " + (i + 1) + ":"));
         notas.push(nota);
     }
     return notas;
+}
+
+function calcularPromedioNotas(notas) {
+    var suma = 0;
+    for (var i = 0; i < notas.length; i++) {
+        suma += notas[i];
+    }
+    return suma / notas.length;
 }
