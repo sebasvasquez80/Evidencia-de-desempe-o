@@ -5,14 +5,14 @@ function iniciarSesion() {
     var maximoIntentos = 3;
 
     while (intentos < maximoIntentos) {
-        var usuario = prompt("Ingrese su usuario")
-        var contrasena = prompt("Ingrese su contraseña")
+        var usuario = prompt("Ingrese su usuario");
+        var contrasena = prompt("Ingrese su contraseña");
 
         if (usuario === usuarioPredefinido && contrasena === contrasenaPredefinida) {
-            return true
+            return true;
         } else {
-            intentos++
-            alert("Usuario o contraseña incorrectos. Intentos restantes: " + (maximoIntentos - intentos))
+            intentos++;
+            alert("Usuario o contraseña incorrectos. Intentos restantes: " + (maximoIntentos - intentos));
         }
     }
 }
@@ -34,7 +34,7 @@ function calcularPromedioNotas(notas) {
     return suma / notas.length;
 }
 
-determinarAprobacion(promedio) {
+function determinarAprobacion(promedio){
     if (promedio < 3) {
         return "Reprueba";
     } else if (promedio <= 4) {
@@ -49,3 +49,21 @@ function mostrarResultado(nombreEstudiante, promedio, estado) {
     console.log("Promedio: " + promedio.toFixed(2));
     console.log("Estado: " + estado);
 }
+
+function ejecuciónPrograma() {
+    if (iniciarSesion()) {
+        while (true) {
+            var nombreEstudiante = prompt("Ingrese el nombre del estudiante (o 'salir' para terminar):");
+            if (nombreEstudiante.toLowerCase() === 'salir') {
+                break;
+            }
+            
+            var notas = capturarNotasEstudiante();
+            var promedio = calcularPromedioNotas(notas);
+            var estado = determinarAprobacion(promedio);
+            mostrarResultado(nombreEstudiante, promedio, estado);
+        }
+    }
+}
+
+ejecuciónPrograma();
