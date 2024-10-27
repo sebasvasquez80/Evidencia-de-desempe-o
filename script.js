@@ -34,7 +34,7 @@ function calcularPromedioNotas(notas) {
     return suma / notas.length;
 }
 
-determinarAprobacion(){
+determinarAprobacion(promedio) {
     if (promedio < 3) {
         return "Reprueba";
     } else if (promedio <= 4) {
@@ -42,4 +42,10 @@ determinarAprobacion(){
     } else {
         return "Aprueba con excelencia";
     }
+}
+
+function mostrarResultado(nombreEstudiante, promedio, estado) {
+    console.log("Estudiante: " + nombreEstudiante);
+    console.log("Promedio: " + promedio.toFixed(2));
+    console.log("Estado: " + estado);
 }
