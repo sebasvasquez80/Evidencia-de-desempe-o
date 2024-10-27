@@ -33,3 +33,13 @@ function calcularPromedioNotas(notas) {
     }
     return suma / notas.length;
 }
+
+determinarAprobacion(){
+    if (promedio < 3) {
+        return "Reprueba";
+    } else if (promedio <= 4) {
+        return "Aprueba con dificultades";
+    } else {
+        return "Aprueba con excelencia";
+    }
+}
